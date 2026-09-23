@@ -24,12 +24,6 @@
     });
   }
 
-  window.requestAnimationFrame(function () {
-    window.requestAnimationFrame(function () {
-      opening.classList.add("is-ready");
-    });
-  });
-
   function openInvitation() {
     if (hasOpened) return;
     hasOpened = true;
@@ -94,20 +88,15 @@
 
   function markActive(section) {
     activeSection = section;
-
-    // Sections at the top of the page are already "intersecting" the moment
-    // the DOM paints, well before the curtain opens. Defer their reveal so
-    // the fade/slide-up animation actually plays once the curtain lifts,
-    // instead of finishing silently behind it.
-    if (!hasOpened) return;
-
     section.classList.add("in-view");
 
     if (section.id === "section-quran") {
       runQuranCrossfade(section);
     }
 
-    scheduleAutoAdvance(section);
+    if (hasOpened) {
+      scheduleAutoAdvance(section);
+    }
   }
 
   var sectionObserver = new IntersectionObserver(
@@ -142,14 +131,10 @@
     slides.forEach(function (slide, i) {
       slide.classList.toggle("active", i === 0);
     });
-    slides[1].classList.remove("slide-revealed");
 
     quranTimer = window.setTimeout(function () {
       slides[0].classList.remove("active");
       slides[1].classList.add("active");
-      window.requestAnimationFrame(function () {
-        slides[1].classList.add("slide-revealed");
-      });
     }, 3200);
   }
 
@@ -317,23 +302,14 @@
       return n < 10 ? "0" + n : String(n);
     }
 
-    function setDigit(el, value) {
-      var text = pad(value);
-      if (el.textContent === text) return;
-      el.textContent = text;
-      el.classList.remove("pulse");
-      void el.offsetWidth;
-      el.classList.add("pulse");
-    }
-
     function tick() {
       var now = Date.now();
       var diff = target - now;
       if (diff <= 0) {
-        setDigit(daysEl, 0);
-        setDigit(hoursEl, 0);
-        setDigit(minutesEl, 0);
-        setDigit(secondsEl, 0);
+        daysEl.textContent = "00";
+        hoursEl.textContent = "00";
+        minutesEl.textContent = "00";
+        secondsEl.textContent = "00";
         window.clearInterval(intervalId);
         return;
       }
@@ -343,10 +319,10 @@
       var minutes = Math.floor((totalSeconds % 3600) / 60);
       var seconds = totalSeconds % 60;
 
-      setDigit(daysEl, days);
-      setDigit(hoursEl, hours);
-      setDigit(minutesEl, minutes);
-      setDigit(secondsEl, seconds);
+      daysEl.textContent = pad(days);
+      hoursEl.textContent = pad(hours);
+      minutesEl.textContent = pad(minutes);
+      secondsEl.textContent = pad(seconds);
     }
 
     tick();
@@ -363,37 +339,24 @@
     var layers = Array.prototype.slice.call(document.querySelectorAll(".petal-layer"));
     if (!layers.length) return;
 
-    var MAX_PETALS_PER_LAYER = 26;
-
     layers.forEach(function (layer) {
-      var isSoft = layer.getAttribute("data-petals") === "soft";
-      var spawnInterval = isSoft ? 500 : 650;
+      var density = layer.getAttribute("data-petals") === "soft" ? 4200 : 6000;
 
       function spawn() {
-        if (layer.children.length >= MAX_PETALS_PER_LAYER) return;
-
-        var isNear = Math.random() > 0.6;
-        var size = isNear ? 14 + Math.random() * 8 : 6 + Math.random() * 7;
-        var startX = Math.random() * 100;
-        var drift = (Math.random() * 2 - 1) * (60 + Math.random() * 90);
-        var duration = isNear ? 7 + Math.random() * 5 : 11 + Math.random() * 9;
-        var delay = Math.random() * 1.4;
-        var rotStart = Math.random() * 360;
-        var rotEnd = rotStart + (Math.random() * 2 - 1) * 420;
-        var peakOpacity = isNear ? 0.75 + Math.random() * 0.15 : 0.4 + Math.random() * 0.2;
-
         var petal = document.createElement("span");
         petal.className = "petal";
+        var size = 8 + Math.random() * 10;
+        var startX = Math.random() * 100;
+        var drift = (Math.random() * 2 - 1) * 90;
+        var duration = 8 + Math.random() * 7;
+        var delay = Math.random() * 0.6;
+
         petal.style.left = startX + "%";
         petal.style.width = size + "px";
         petal.style.height = size * 0.8 + "px";
         petal.style.setProperty("--drift", drift + "px");
-        petal.style.setProperty("--rot-start", rotStart + "deg");
-        petal.style.setProperty("--rot-end", rotEnd + "deg");
-        petal.style.setProperty("--peak-opacity", peakOpacity);
         petal.style.animationDuration = duration + "s";
         petal.style.animationDelay = delay + "s";
-        if (!isNear) petal.style.filter = "blur(0.4px)";
         petal.style.opacity = "0";
 
         layer.appendChild(petal);
@@ -403,10 +366,8 @@
         }, (duration + delay) * 1000 + 200);
       }
 
-      for (var i = 0; i < 6; i++) {
-        window.setTimeout(spawn, i * 140);
-      }
-      window.setInterval(spawn, spawnInterval);
+      spawn();
+      window.setInterval(spawn, density / 3);
     });
   }
 
