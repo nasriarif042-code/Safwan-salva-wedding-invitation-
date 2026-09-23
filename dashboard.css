@@ -1,0 +1,226 @@
+/* Dashboard-specific styling; relies on shared variables from style.css */
+
+body.dashboard-body {
+  overflow-x: hidden;
+  background: var(--burgundy-deep);
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.dash-login {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.dash-login-card {
+  width: min(90vw, 380px);
+  padding: 2rem 1.75rem;
+  border-radius: 18px;
+  border: 1px solid rgba(230, 205, 148, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+  text-align: center;
+}
+
+.dash-eyebrow {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--gold-light);
+  opacity: 0.75;
+  margin: 0 0 0.4rem 0;
+}
+
+.dash-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: var(--ivory);
+  margin: 0 0 1.4rem 0;
+}
+
+.dash-label {
+  display: block;
+  text-align: left;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 0.4rem;
+}
+
+.dash-input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(230, 205, 148, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ivory);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  margin-bottom: 1.1rem;
+}
+
+.dash-input:focus {
+  outline: none;
+  border-color: var(--gold-light);
+}
+
+.dash-btn {
+  width: 100%;
+  padding: 0.85rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-deep));
+  color: var(--burgundy-deep);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.dash-error {
+  min-height: 1.1rem;
+  margin: 0.8rem 0 0 0;
+  color: #e69a9a;
+  font-size: 0.85rem;
+}
+
+.dash-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem calc(2.5rem + env(safe-area-inset-bottom));
+}
+
+.dash-header {
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+.dash-sub {
+  color: var(--ivory-soft);
+  opacity: 0.7;
+  font-style: italic;
+  margin: 0.2rem 0 0 0;
+}
+
+.dash-summary {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.dash-stat {
+  flex: 1;
+  max-width: 180px;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid rgba(230, 205, 148, 0.3);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.dash-stat span {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--gold-light);
+}
+
+.dash-stat small {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ivory-soft);
+  opacity: 0.75;
+}
+
+.dash-side {
+  margin-bottom: 2.2rem;
+}
+
+.dash-side-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.dash-side-header h2 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--ivory);
+  margin: 0;
+}
+
+.dash-export {
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(230, 205, 148, 0.5);
+  background: rgba(230, 205, 148, 0.08);
+  color: var(--gold-light);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.dash-export:active {
+  transform: scale(0.97);
+}
+
+.dash-table-wrap {
+  border: 1px solid rgba(230, 205, 148, 0.25);
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.dash-table th,
+.dash-table td {
+  padding: 0.65rem 0.8rem;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(230, 205, 148, 0.15);
+}
+
+.dash-table th {
+  color: var(--gold-light);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.dash-table td {
+  color: var(--ivory-soft);
+}
+
+.dash-empty {
+  text-align: center;
+  padding: 1.2rem;
+  color: var(--ivory-soft);
+  opacity: 0.6;
+  font-style: italic;
+  margin: 0;
+}
+
+.dash-back {
+  display: block;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--gold-deep);
+  font-size: 0.85rem;
+  opacity: 0.75;
+}

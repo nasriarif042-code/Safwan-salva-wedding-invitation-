@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Safwan &amp; Salva — Wedding Invitation</title>
+<meta name="description" content="You are invited to the wedding of Safwan &amp; Salva — 25 October 2026, Valencia Galleria, Kozhikode." />
+<meta name="theme-color" content="#2a0510" />
+<meta property="og:title" content="Safwan &amp; Salva — Wedding Invitation" />
+<meta property="og:description" content="You are invited to celebrate the wedding of Safwan &amp; Salva." />
+<meta property="og:image" content="/.netlify/images?url=/assets/og-image.jpg&amp;w=1200&amp;fm=webp" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="locked">
+
+<div id="opening" class="opening">
+  <div class="curtain-half left">
+    <div class="curtain-fill"></div>
+  </div>
+  <div class="curtain-half right">
+    <div class="curtain-fill"></div>
+  </div>
+  <div class="opening-content">
+    <p class="opening-ornament">✦</p>
+    <h1 class="opening-title">Safwan <span class="opening-amp">&amp;</span> Salva</h1>
+    <button id="tapToOpenBtn" class="tap-btn" type="button">
+      <span>Tap to Open</span>
+    </button>
+  </div>
+</div>
+
+<main id="scrollContainer" class="scroll-container">
+
+  <section id="section-arabic" class="section" data-duration="5000">
+    <div class="petal-layer" data-petals="soft"></div>
+    <video class="section-video" autoplay muted loop playsinline preload="auto">
+      <source src="assets/wedding-video.mp4" type="video/mp4" />
+    </video>
+    <div class="scrim scrim-dark"></div>
+    <div class="section-content names-ar">
+      <p class="reveal name-ar" dir="rtl" style="--d:0"><span class="float-inner" style="animation-delay:0s">صَفْوَان بْن مُحَمَّد عَلِي ك.ك</span></p>
+      <p class="reveal amp-ar" style="--d:1"><span class="float-inner" style="animation-delay:0.4s">&amp;</span></p>
+      <p class="reveal name-ar" dir="rtl" style="--d:2"><span class="float-inner" style="animation-delay:0.8s">سلوا مريمة ك.ب</span></p>
+    </div>
+  </section>
+
+  <section id="section-english" class="section bg-fixed" data-duration="5000" style="background-image:url('assets/english-bg.jpg')">
+    <div class="petal-layer" data-petals="soft"></div>
+    <div class="section-content names-en">
+      <p class="reveal eng-name" style="--d:0">Safwan bin Muhammed Ali KK</p>
+      <p class="reveal eng-sub" style="--d:1">Son of Muhammed Ali KK</p>
+      <p class="reveal amp-en" style="--d:2">&amp;</p>
+      <p class="reveal eng-name" style="--d:3">Salva Mariyam KP</p>
+      <p class="reveal eng-sub" style="--d:4">Daughter of Late Kunjahammad Haji KP</p>
+    </div>
+  </section>
+
+  <section id="section-quran" class="section" data-duration="6500">
+    <div class="quran-slide active" data-slide="1" style="background-image:url('assets/quran-bg.jpg')">
+      <div class="scrim scrim-light"></div>
+      <div class="section-content quran-content">
+        <p class="reveal quran-ar" dir="rtl" style="--d:0">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا</p>
+        <span class="reveal quran-divider" style="--d:1">۞</span>
+        <p class="reveal quran-meaning" style="--d:2">“And among His signs is that He created for you spouses from among yourselves so that you may find tranquility in them.”</p>
+      </div>
+    </div>
+    <div class="quran-slide" data-slide="2" style="background-image:url('assets/quran-bg-2.jpg')">
+      <div class="scrim scrim-light"></div>
+      <div class="section-content quran-content">
+        <p class="reveal quran-ar" dir="rtl" style="--d:0">وَخَلَقْنَاكُمْ أَزْوَاجًا</p>
+        <span class="reveal quran-divider" style="--d:1">۞</span>
+        <p class="reveal quran-meaning" style="--d:2">“And We created you in pairs.”</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-reception" class="section bg-plain" data-duration="5000">
+    <div class="petal-layer" data-petals="light"></div>
+    <div class="section-content reception-content">
+      <p class="reveal eyebrow" style="--d:0">The Reception</p>
+      <h2 class="reveal section-heading" style="--d:1">Save the Date</h2>
+      <div class="scratch-card reveal" style="--d:2">
+        <div class="scratch-reveal">
+          <p class="reveal-date">25 OCTOBER 2026</p>
+          <p class="reveal-day">SUNDAY</p>
+          <p class="reveal-time">4:30 PM</p>
+          <p class="reveal-hijri">JAMADUL AWWAL 13, 1448</p>
+        </div>
+        <canvas id="scratchCanvas" class="scratch-canvas"></canvas>
+      </div>
+      <p class="reveal scratch-hint" style="--d:3">Scratch the card to reveal the date</p>
+    </div>
+  </section>
+
+  <section id="section-venue" class="section bg-fixed" data-duration="5000" style="background-image:url('assets/venue.jpg')">
+    <div class="scrim scrim-dark"></div>
+    <div class="section-content venue-content">
+      <p class="reveal eyebrow eyebrow-light" style="--d:0">The Venue</p>
+      <h2 class="reveal venue-name" style="--d:1">Valencia Galleria</h2>
+      <p class="reveal venue-address" style="--d:2">Markaz Knowledge City</p>
+      <p class="reveal venue-address" style="--d:3">Kaithapoyil, Kozhikode, Kerala</p>
+      <a class="reveal venue-btn" style="--d:4" id="viewLocationBtn"
+         href="https://www.google.com/maps/search/?api=1&query=Valencia+Galleria%2C+Markaz+Knowledge+City%2C+Kaithapoyil%2C+Kerala+673580"
+         target="_blank" rel="noopener noreferrer">View Location</a>
+    </div>
+  </section>
+
+  <section id="section-countdown" class="section bg-plain" data-duration="5000">
+    <div class="petal-layer" data-petals="light"></div>
+    <div class="section-content countdown-content">
+      <p class="reveal eyebrow" style="--d:0">Counting Down To Forever</p>
+      <div class="countdown-grid reveal" style="--d:1">
+        <div class="countdown-item"><span id="cdDays">00</span><small>Days</small></div>
+        <div class="countdown-item"><span id="cdHours">00</span><small>Hours</small></div>
+        <div class="countdown-item"><span id="cdMinutes">00</span><small>Minutes</small></div>
+        <div class="countdown-item"><span id="cdSeconds">00</span><small>Seconds</small></div>
+      </div>
+      <p class="reveal countdown-note" style="--d:2">25 October 2026 · 4:30 PM · Kozhikode</p>
+    </div>
+  </section>
+
+  <section id="section-final" class="section">
+    <div class="petal-layer" data-petals="soft"></div>
+    <video class="section-video" autoplay muted loop playsinline preload="auto">
+      <source src="assets/wedding-video.mp4" type="video/mp4" />
+    </video>
+    <div class="scrim scrim-dark"></div>
+    <div class="section-content final-content">
+      <p class="reveal final-bismillah" dir="rtl" style="--d:0">إِنْ شَاءَ ٱللَّٰهُ</p>
+      <p class="reveal final-dua" style="--d:1">May Allah bless this new journey with endless love, peace, barakah and happiness. Ameen. 🤍</p>
+      <p class="reveal final-invite" style="--d:2">We would love to celebrate this special day with you.</p>
+
+      <form id="guestForm" class="guest-form reveal" style="--d:3" novalidate>
+        <label class="form-label" for="guestName">Your Name</label>
+        <input id="guestName" name="guestName" type="text" class="form-input" placeholder="Enter your name" autocomplete="name" maxlength="120" />
+
+        <p class="form-group-label">Will you be attending?</p>
+        <div class="choice-group" id="responseGroup">
+          <button type="button" class="choice-btn" data-field="response" data-value="attending">I Will Attend</button>
+          <button type="button" class="choice-btn" data-field="response" data-value="not_attending">I Won't Be Able to Attend</button>
+        </div>
+
+        <p class="form-group-label">Which side are you celebrating with?</p>
+        <div class="choice-group" id="sideGroup">
+          <button type="button" class="choice-btn" data-field="side" data-value="groom">Groom</button>
+          <button type="button" class="choice-btn" data-field="side" data-value="bride">Bride</button>
+        </div>
+
+        <button type="submit" class="submit-btn" id="guestSubmit">Send Response</button>
+        <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-names">Safwan &amp; Salva · 25.10.2026</p>
+  <a href="dashboard.html" class="dashboard-link">Dashboard</a>
+</footer>
+
+<audio id="bgMusic" loop preload="auto">
+  <source src="assets/wedding-music.mp3" type="audio/mpeg" />
+</audio>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>

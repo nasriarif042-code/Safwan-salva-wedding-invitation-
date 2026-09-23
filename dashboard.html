@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Dashboard — Safwan &amp; Salva</title>
+<meta name="robots" content="noindex, nofollow" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="dashboard-body">
+
+<div id="loginScreen" class="dash-login">
+  <div class="dash-login-card">
+    <p class="dash-eyebrow">Safwan &amp; Salva</p>
+    <h1 class="dash-title">Dashboard</h1>
+    <label class="dash-label" for="dashPassword">Password</label>
+    <input id="dashPassword" type="password" class="dash-input" placeholder="Enter password" autocomplete="current-password" />
+    <button id="dashLoginBtn" type="button" class="dash-btn">Unlock</button>
+    <p id="dashLoginError" class="dash-error"></p>
+  </div>
+</div>
+
+<div id="dashScreen" class="dash-main" hidden>
+  <header class="dash-header">
+    <h1 class="dash-title">Guest Responses</h1>
+    <p class="dash-sub">Safwan &amp; Salva · 25 October 2026</p>
+  </header>
+
+  <section class="dash-summary">
+    <div class="dash-stat">
+      <span id="statAttending">0</span>
+      <small>Attending</small>
+    </div>
+    <div class="dash-stat">
+      <span id="statNotAttending">0</span>
+      <small>Not Attending</small>
+    </div>
+  </section>
+
+  <section class="dash-side">
+    <div class="dash-side-header">
+      <h2>Groom's Side</h2>
+      <button type="button" class="dash-export" id="exportGroomBtn">Download Groom Excel</button>
+    </div>
+    <div class="dash-table-wrap">
+      <table class="dash-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date &amp; Time</th>
+            <th>Response</th>
+          </tr>
+        </thead>
+        <tbody id="groomTableBody"></tbody>
+      </table>
+      <p class="dash-empty" id="groomEmpty">No responses yet.</p>
+    </div>
+  </section>
+
+  <section class="dash-side">
+    <div class="dash-side-header">
+      <h2>Bride's Side</h2>
+      <button type="button" class="dash-export" id="exportBrideBtn">Download Bride Excel</button>
+    </div>
+    <div class="dash-table-wrap">
+      <table class="dash-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date &amp; Time</th>
+            <th>Response</th>
+          </tr>
+        </thead>
+        <tbody id="brideTableBody"></tbody>
+      </table>
+      <p class="dash-empty" id="brideEmpty">No responses yet.</p>
+    </div>
+  </section>
+
+  <a href="index.html" class="dash-back">← Back to Invitation</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="js/dashboard.js" defer></script>
+</body>
+</html>
